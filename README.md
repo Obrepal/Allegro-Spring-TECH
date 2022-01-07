@@ -20,10 +20,10 @@ Project is created with:
 To run this project virtual environment is strongly recommended. 
 
 ```
-$ git clone https://github.com/Obrepal/Allegro-Spring-TECH
-$ cd Allegro-Spring-TECH
-$ pip install -r requirements.txt
-$ uvicorn Repo_info:app --reload
+git clone https://github.com/Obrepal/Allegro-Spring-TECH
+cd Allegro-Spring-TECH
+pip install -r requirements.txt
+uvicorn Repo_info:app --reload
 ```
 Then in browser paste http://127.0.0.1:8000
 To access user data add /user/"user_id" e.g. http://127.0.0.1:8000/user/Obrepal
