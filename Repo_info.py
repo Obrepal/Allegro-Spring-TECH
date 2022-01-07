@@ -40,8 +40,8 @@ async def read_user(user_id: str):
                 if key not in d.keys():
                     data_bytes[key] = [1, val]
                 else:
-                    data_bytes[key][0] = 1 + d[key][0]
-                    data_bytes[key][1] = val + d[key][1]
+                    data_bytes[key][0] = 1 + data_bytes[key][0]
+                    data_bytes[key][1] = val +  data_bytes[key][1]
                 #size = val + size 
                 new_list.append([key, val])
 
