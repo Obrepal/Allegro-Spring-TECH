@@ -1,5 +1,4 @@
 # Allegro-Spring-TECH
-Third stage of recruting process to Allegro for internship program "Summer e-Xperience 2022"
 
 
 ## Table of contents
@@ -8,8 +7,8 @@ Third stage of recruting process to Allegro for internship program "Summer e-Xpe
 * [Setup](#setup)
 
 ## General info
-Third stage of recruting process to Allegro for internship program "Summer e-Xperience 2022"
-Program counts number of stars of given  Github user. 
+Third stage of recruting process to Allegro for internship program "Summer e-Xperience 2022".\
+Program counts number of stars, returns repositories and usage of used language  by  given  Github user. 
 
 ## Technologies
 Project is created with:
@@ -25,5 +24,12 @@ cd Allegro-Spring-TECH
 pip install -r requirements.txt
 uvicorn Repo_info:app --reload
 ```
-Then in browser paste http://127.0.0.1:8000
-To access user data add /user/"user_id" e.g. http://127.0.0.1:8000/user/Obrepal
+Then paste http://127.0.0.1:8000 in browser.\
+To access user data add /user/<user_id>/stars|bytes|repos e.g. http://127.0.0.1:8000/user/Obrepal/stars returns 
+```json
+{"List of repositories":[["Allegro-Spring-TECH",0],["SCZR",0],["SZAU",0],["TRA",0],["ZombieHead",0]]}
+```
+In case of error 
+```json
+{"detail":"Not Found"}
+```
