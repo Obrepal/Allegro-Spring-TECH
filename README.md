@@ -5,6 +5,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [More](#More)
 
 ## General info
 Third stage of recruting process to Allegro for internship program "Summer e-Xperience 2022".\
@@ -32,4 +33,11 @@ To access user data add /user/<user_id>/stars|bytes|repos e.g. http://127.0.0.1:
 In case of error 
 ```json
 {"detail":"Not Found"}
+```
+## More
+Project was tested with simple tests. To run them simply use: 
+
+
+```
+pytest
 ```
