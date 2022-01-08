@@ -41,3 +41,4 @@ Project was tested with simple tests. To run them simply use:
 ```
 pytest
 ```
+To improve project higher rate limit could be added. 
