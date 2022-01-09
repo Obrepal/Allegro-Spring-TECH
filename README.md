@@ -9,10 +9,10 @@
 
 ## General info
 Third stage of recruting process to Allegro for internship program "Summer e-Xperience 2022".\
-Program counts number of stars, returns repositories and usage of used language  by  given  Github user. 
+Program counts the number of stars, returns repositories and usage the of used language by a given  Github user. 
 
 ## Technologies
-Project is created with:
+Project was created with:
 * Python 3.10.0
 * Fastapi 0.70.1
 	
@@ -41,4 +41,4 @@ Project was tested with simple tests. To run them simply use:
 ```
 pytest
 ```
-To improve project higher rate limit could be added. 
+To improve project higher rate limit could be added.
