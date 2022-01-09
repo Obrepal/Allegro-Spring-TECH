@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI, status, HTTPException
 import sys
 import json
@@ -16,7 +15,6 @@ def repos(user_id):
     api_url = 'https://api.github.com/users/{user_id}/repos?page={page_id}'
     while True:
         r = requests.get(api_url.format(user_id=user_id, page_id=page_id))
-        print(r.json())
         if r.status_code != status.HTTP_200_OK:
             print(r.status_code)
             raise CouldNotObtainRepos
@@ -54,30 +52,36 @@ async def count_bytes(user_id: str):
 
     api_url = 'https://api.github.com/users/{user_id}/repos?page={page_id}'
     languages_url = 'https://api.github.com/repos/{user_id}/{repo_data}/languages'
-
+      
     repo_data = " "
     repo_list = []
     page_id = 1
     data_bytes = {}
 
-    r = requests.get(api_url.format(user_id=user_id, page_id=page_id))
-    repo_array = json.loads(r.content.decode('utf-8'))
+    while True:
 
-    for repo in repo_array:
-        if not repo['fork']:
+        r = requests.get(api_url.format(user_id=user_id, page_id=page_id))
+        if r.status_code != status.HTTP_200_OK:
+            raise HTTPException(status_code=500, detail="Item not found")
+        else:
+            repo_array = json.loads(r.content.decode('utf-8'))
 
-            l = requests.get(languages_url.format(
+        if len(repo_array) == 0:
+            break
+
+        for repo in repo_array:
+            if not repo['fork']:
+
+                l = requests.get(languages_url.format(
                 user_id=user_id, repo_data=repo['name']))
-            language_data = json.loads(l.content.decode('utf-8'))
+                language_data = json.loads(l.content.decode('utf-8'))
 
-            for key, val in language_data.items():
-                
-                if key not in data_bytes.keys():
-                    data_bytes[key] = [1, val]
-                else:
-                    data_bytes[key][0] = 1 + data_bytes[key][0]
-                    data_bytes[key][1] = val + data_bytes[key][1]
+                for key, val in language_data.items():
 
+                    if key not in data_bytes.keys():
+                        data_bytes[key] = [1, val]
+                    else:
+                        data_bytes[key][0] = 1 + data_bytes[key][0]
+                        data_bytes[key][1] = val + data_bytes[key][1]
+        page_id += 1
     return {"Bytes in given language": data_bytes}
-
-   
