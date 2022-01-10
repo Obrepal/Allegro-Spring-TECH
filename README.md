@@ -57,5 +57,5 @@ pytest
 ```
 To improve project higher rate limit could be added. 
 
-Current limits can be found below: 
+Current limits can be found below:\
 https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting
