@@ -5,7 +5,8 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [More](#More)
+* [App-engine](#app-engine)
+* [More](#more)
 
 ## General info
 Third stage of recruting process to Allegro for internship program "Summer e-Xperience 2022".\
@@ -34,6 +35,19 @@ In case of error
 ```json
 {"detail":"Not Found"}
 ```
+
+## App-engine
+
+You can skip previous steps. Just paste https://githubusers-337809.appspot.com in the browser and add /user/<user_id>/stars|bytes|repos e.g 
+
+https://githubusers-337809.appspot.com/user/Obrepal/bytes  returns
+ 
+```json
+{"Bytes in given language":{"Python":[2,35822],"C":[1,17047],"Makefile":[1,192],"Shell":[1,102],"MATLAB":[1,22632],"Java":[1,34921]}}
+```
+
+
+
 ## More
 Project was tested with simple tests. To run them simply use: 
 
